@@ -52,7 +52,7 @@ SDK 는 권한과 서비스를 **직접 선언하지 않습니다.** 사용하�
 ## 3. SDK 초기화 — `init(...)`
 
 ```kotlin
-fun init(context: Context, appId: String = "ssac3")
+fun init(context: Context, appId: String)
 ```
 
 **반드시 `Application.onCreate()` 에서 호출해 주세요.**
