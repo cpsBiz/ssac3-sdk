@@ -23,7 +23,7 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("io.github.cpsbiz-ssac3-1.1.1")
+    implementation("io.github.cpsbiz-ssac3-1.1.2")
 }
 ```
 
@@ -53,6 +53,12 @@ SDK 는 권한과 서비스를 **직접 선언하지 않습니다.** 사용하�
 
 ```kotlin
 fun init(context: Context, appId: String)
+```
+
+싹쓰리 개발 서버와 연동 테스트를 하려면 `init` 의 세 번째 인자 `useDev` 에 `true` 를 넘긴다. SDK 가 여는 **웹 화면과 SDK 의 API 호출이 함께** 개발 서버로 바뀐다.
+
+```kotlin
+ShopPlusSDK.init(this, appId = "발급받은_appId", useDev = true)
 ```
 
 **반드시 `Application.onCreate()` 에서 호출해 주세요.**
