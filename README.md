@@ -23,7 +23,7 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("io.github.cpsbiz:ssac3:1.1.0")
+    implementation("io.github.cpsbiz-ssac3-1.1.1")
 }
 ```
 
