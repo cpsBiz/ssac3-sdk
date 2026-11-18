@@ -23,7 +23,7 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("io.github.cpsbiz-ssac3-1.1.2")
+    implementation("io.github.cpsbiz-ssac3-1.1.3")
 }
 ```
 
@@ -123,3 +123,21 @@ ShopPlusSDK.clearEncryptedUserId()
 - 빈 값을 넘기면 아무 일도 하지 않습니다. 연동을 끊을 때는 `clearEncryptedUserId()` 를 호출해 주세요.
 - 로그아웃 · 회원탈퇴 시 `clearEncryptedUserId()` 를 꼭 호출해 주세요. 호출하지 않으면 이전 회원 정보가 남습니다.
 - `startShop` 등으로 화면을 열기 **전에** 호출해야 그 화면부터 반영됩니다.
+
+**광고 아이디 쿠키 (`setAdId`) — 선택**
+
+광고 아이디(ADID)를 SDK 웹뷰 쿠키(`ssac3_adid`)로 심는다. 방식은 `setEncryptedUserId` 와 같다.
+
+- **Kotlin**
+
+```kotlin
+// 광고 아이디를 얻은 뒤 — 웹뷰를 띄우기 전에 호출한다
+ShopPlusSDK.setAdId(adId)
+
+// 값을 더 넘기지 않을 때
+ShopPlusSDK.clearAdId()
+```
+
+- 전제·규칙
+- **`init` 이후**, **웹뷰를 띄우기 전에** 호출한다.
+- **빈 값을 넘기면 아무 일도 하지 않는다.** 지울 때는 `clearAdId()` 를 쓴다.
